@@ -1,8 +1,15 @@
 package lambda;
+/**
+ * lambda выражение использует функциональный интерфейс
+ * функциональный интерфейс, это интерфейс, который содержит только один абстрактный метод, других методов
+ * default или static может быть сколько угодно
+ */
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+
+
 
 interface CheckStudent{
     boolean check(Student s);
@@ -29,11 +36,16 @@ public class InfoLambda {
         students.add(st3);
         students.add(st4);
         students.add(st5);
-
+       
+        InfoLambda info = new InfoLambda();
+        System.out.println("++++++++++++++++++++++++++++");
+        CheckStudent cs = s -> s.getSex()=='f';
+        info.testStudent(students,cs);
+        System.out.println("+++++++++++++++++++++++++++++");
        CheckStudent cs1 = s -> s.getAge() >20;
        CheckStudent cs2 = s -> s.getAvgCgrade()>8.5;
        CheckStudent cs3 = s-> s.getAvgCgrade()> 8 && s.getSex()== 'f' && s.getAge()>=20;
-       InfoLambda info = new InfoLambda();
+
         System.out.println("----------------------------");
        info.testStudent(students,cs1);
         System.out.println("-------------------------------");

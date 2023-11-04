@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class ReduceDemo {
+public class ReduceDemo {//на выходе reduce всегда будет только один элемент
     public static void main(String[] args) {
         List<Integer> list= new ArrayList<>();
         list.add(5);

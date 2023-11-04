@@ -3,6 +3,12 @@ package lambda.interfacesFunciton.predicate;
 import java.util.ArrayList;
 import java.util.function.Predicate;
 
+/**
+ * Rredicate<T> boolean test(T t); - интерфейс Предикат
+ * Используется методом removeif, для удаления данных из коллекций, которые не удовлетаоряют данному предикату
+
+ */
+
 public class RemoveIf {
     public static void main(String[] args) {
         ArrayList<String> al = new ArrayList<>();

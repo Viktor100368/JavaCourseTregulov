@@ -17,7 +17,7 @@ public class MapToIntDemo {
         studentList.add(st4);
         studentList.add(st5);
         List<Integer> list= studentList.stream()
-                .mapToInt(el->el.getAge())
+                .mapToInt(el->el.getAge())//переводит поток студентов в поток int-ов (getAge it is int type)
                 .boxed()//метод boxed конвертирует int в Integer, getAge является int
                 //по этому обязательна нужно использовать boxed()
                 .toList();

@@ -1,17 +1,10 @@
 package stream;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
-public class SortedDemo {
-    //сортирует элементы потока
+public class TestChaining {
     public static void main(String[] args) {
-        int [] array = {1,56,23,45,123,34,40,94};
-        array=Arrays.stream(array).sorted().toArray();
-        System.out.println(Arrays.toString(array));
-        System.out.println("-------------------------");
         Student st1 = new Student("Ivan",'m',33,5,8.9);
         Student st2 = new Student("Anna",'f',23,2,9.2);
         Student st3 = new Student("Anton",'m',22,3,7.5);
@@ -23,10 +16,16 @@ public class SortedDemo {
         studentList.add(st3);
         studentList.add(st4);
         studentList.add(st5);
-        studentList.stream().sorted((o1, o2) -> {
-            double result = Double.compare(o1.getAvgGrade(),o2.getAvgGrade());
-            return (int)result;
-        }).forEach(System.out::println);
+//        studentList.stream().filter(el->el.getSex()=='f').sorted((el1,el2)->el1.getName().compareTo(el2.getName()))
+//                .map(el->el.getName().toUpperCase()).forEach(System.out::println);
+
+        studentList.stream().map(el->{
+            el.setName(el.getName().toUpperCase());
+            return el;})
+                .filter(el->el.getSex()=='f')
+                .sorted((el,el2)->el.getAge()-el2.getAge())
+                .forEach(System.out::println);
+
     }
 
 }

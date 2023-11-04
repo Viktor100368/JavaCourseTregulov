@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class FlatMapDemo {
+    //метод flatMap используется , когда нужно работать не с элементами стрима, а с
+    //элементами элементов
     public static void main(String[] args) {
         Student st1 = new Student("Ivan",'m',33,5,8.9);
         Student st2 = new Student("Anna",'f',23,2,9.2);
@@ -25,7 +27,8 @@ public class FlatMapDemo {
         facultyList.add(fc1);
         facultyList.add(fc2);
 
-        facultyList.stream().flatMap(el->el.studentFaculty.stream()).forEach(el-> System.out.println(el.getName()));
+        facultyList.stream().flatMap(el->el.getStudentOnFaculty().stream())
+                .forEach(el-> System.out.println(el.getName()));
 
 
     }
@@ -43,7 +46,7 @@ class Faculty{
         return name;
     }
 
-    public List<Student> getStudentFaculty() {
+    public List<Student> getStudentOnFaculty() {
         return studentFaculty;
     }
     public void addStudentToFaculty(Student st){

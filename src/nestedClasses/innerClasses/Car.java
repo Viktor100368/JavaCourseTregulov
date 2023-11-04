@@ -19,7 +19,15 @@ public class Car {
                 ", engine= "+engine+
                 '}';
     }
-    public class Engine{
+
+    /**
+     * Каждый объект inner класса всегда ассоциируется с объектом внешнего класса
+     * Создавая объект inner класса, нужно перед этим создать объект его внешнего класса
+     * inner класс может содержать только nun-static элементы
+     * inner класс может обращаться даже к private элементам внешнего класса
+     * Внешний класс может обращаться даже к private элементам inner класса, прежде создав его объект
+     */
+    public class Engine{ //inner nested class
         private int horsePower;
         private int countCilyndr;
 

@@ -28,7 +28,15 @@ public class Car {
                 ",countOfObjects ="+ Engine.countOfObject+ //обратились к приватной статической переменной nested class Engine
                 '}';
     }
-    public static class Engine{
+
+    /**
+     * static nested класс очень похож на обычный внешний, на находится внутри другого класса.
+     * Создавая объект static nested класса, нужно указывать и класс, содержаший его
+     * static nested класс может содержать static и not-static элементы
+     * static nested класс может обращаться даже к private элементам внешнего класса, но только к static
+     * Внешний класс может обрашаться даже  к private элементам static nested класса и наоборот
+     */
+    public static class Engine{ //static nested class
        private int horsePower;
        private static int countOfObject;
 

@@ -3,6 +3,10 @@ package lambda.interfacesFunciton.consumer;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Consumer<T>   void accept(T t):
+ * Consumer используется методом foreach
+ */
 public class ForEach {
     public static void main(String[] args) {
         List<String> list = List.of("privet","kak dela","vse normalno","poka");

@@ -5,6 +5,17 @@ import lambda.Student;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.*;
+
+/**
+ * Интерфейс Function<T,R>   R apply(T t);
+ */
+interface MyFunction<T,R>{
+    R apply(T t);
+}
+interface MyPredicate<T>{
+    boolean test(T t);
+}
 
 public class FunctionDemo {
     public static void main(String[] args) {
@@ -20,10 +31,43 @@ public class FunctionDemo {
         students.add(st4);
         students.add(st5);
 
-        Function<Student,Double> f = student -> student.getAvgCgrade();
-        for(int i=0; i<students.size(); i++){
-            System.out.println("avgGrade student "+(i+1)+" -> "+f.apply(students.get(i)));
+        MyFunction<Student,Double> func = (student)->(double)student.getAge();
+        double result = 0;
+        for(Student s : students){
+            result +=s.getAge();
         }
+        System.out.println("average age = "+result/students.size());
+        System.out.println("===================================");
+
+        MyPredicate<Student> myPr = student -> student.getSex()=='f';
+        for(Student s:students){
+            if(myPr.test(s)){
+                System.out.println("student with sex is female -> "+s);
+            }
+        }
+        System.out.println("=====================================");
+        Predicate<Student> pr = student -> student.getCourse()>3;
+        for(Student s: students){
+            if(pr.test(s)){
+                System.out.println("course = "+s);
+            }
+        }
+        System.out.println("=================================");
+        Predicate<Student> p1 = student -> student.getAvgCgrade() > 8;
+        Predicate<Student> p2  = student -> student.getAge()<22;
+        for(Student s:students){
+            if(p1.and(p2).test(s)){
+                System.out.println(s);
+            }
+        }
+        System.out.println("==============================");
+        students.removeIf(s->s.getAge()<=20);
+        for(Student s: students){
+            System.out.println(s);
+        }
+        System.out.println("============================");
+        Predicate<Integer> pInt = num->(num % 2 == 0);
+        System.out.println(pInt.test(21));
 
 
 //        getDoubleValue(students,student -> student.getAvgCgrade());

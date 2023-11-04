@@ -3,6 +3,11 @@ package lambda.interfacesFunciton.supplier;
 import java.util.ArrayList;
 import java.util.function.Supplier;
 
+/**
+ * Supplier<T>  T get();  переводится как поставшик, аргументов не получает
+ *
+ */
+
 public class SupplierDemo {
    public static ArrayList<Car> createFourCar(Supplier<Car> carSupplier){
        ArrayList<Car> list = new ArrayList<>();
@@ -14,7 +19,9 @@ public class SupplierDemo {
 
     public static void main(String[] args) {
         ArrayList<Car> ourCar = createFourCar(()-> new Car("Uaz- Patriot","black",2.7));
-        System.out.println(ourCar);
+       for(Car car: ourCar){
+           System.out.println(car);
+       }
     }
 }
 

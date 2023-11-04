@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+/**
+ * Consumer<T>   void accept(T t):
+ * Consumer используется методом foreach
+ */
 public class ConsumerDemo {
     public static ArrayList<Car1> createCar(Supplier<Car1> car1Supplier){
         ArrayList<Car1> list = new ArrayList<>();
@@ -21,7 +25,7 @@ public class ConsumerDemo {
         changeCar(ourCar1.get(0),car1 -> {
             car1.setColor("white");
             car1.setEngine(1.8);
-            System.out.println("car upgrade "+car1);
+            System.out.println("car number 1 is upgrade "+car1);
         });
         System.out.println(ourCar1);
 
