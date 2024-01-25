@@ -34,7 +34,8 @@ public class Car {
      * Создавая объект static nested класса, нужно указывать и класс, содержаший его
      * static nested класс может содержать static и not-static элементы
      * static nested класс может обращаться даже к private элементам внешнего класса, но только к static
-     * Внешний класс может обрашаться даже  к private элементам static nested класса и наоборот
+     * Внешний класс может обрашаться даже  к private элементам static nested класса и  к non static элементам
+     * nested класса, но только через создание экземпляра nested класса
      */
     public static class Engine{ //static nested class
        private int horsePower;

@@ -1,6 +1,7 @@
 package stream;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MapToIntDemo {
@@ -21,7 +22,13 @@ public class MapToIntDemo {
                 .boxed()//метод boxed конвертирует int в Integer, getAge является int
                 //по этому обязательна нужно использовать boxed()
                 .toList();
-        System.out.println(list);
+        System.out.println("list to student.getAge = "+list);
+        int[] array= studentList.stream()
+                .mapToInt(el->el.getAge())//переводит поток студентов в поток int-ов (getAge it is int type)
+               // .boxed()//метод boxed конвертирует int в Integer, getAge является int
+                //по этому обязательна нужно использовать boxed()
+                .toArray();
+        System.out.println("array to student.getAge = "+Arrays.toString(array));
         // метод sum()
         int sum = studentList.stream().mapToInt(el->el.getCourse()).sum();
         System.out.println("sum getCourse = "+sum);

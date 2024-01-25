@@ -23,10 +23,16 @@ public class SortedDemo {
         studentList.add(st3);
         studentList.add(st4);
         studentList.add(st5);
-        studentList.stream().sorted((o1, o2) -> {
-            double result = Double.compare(o1.getAvgGrade(),o2.getAvgGrade());
-            return (int)result;
-        }).forEach(System.out::println);
+//        studentList.stream().sorted((o1, o2) -> {
+//            double result = Double.compare(o1.getAvgGrade(),o2.getAvgGrade());
+//            return (int)result;
+//        }).forEach(System.out::println);
+        studentList.stream().map(el->{
+            el.setName(el.getName().toUpperCase());
+            return el;
+        }).filter(el->el.getSex()=='f')
+                .sorted((a,b)->b.getAge()-a.getAge())
+                .forEach(System.out::println);
     }
 
 }

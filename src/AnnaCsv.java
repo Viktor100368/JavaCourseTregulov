@@ -28,6 +28,7 @@ public class AnnaCsv {
 
         //++++++++++++++++++++++++++++++это весь код+++++++++++++++++++++++++++++++
         System.out.println(fullList);
+        long start = System.nanoTime();
         String[] fullArrayFromRows = new String[fullList.size()];  //инициализируем стринг массив длинной в весь файл
         fullList.toArray(fullArrayFromRows);  //разбиваем всю кишку по строкам
 
@@ -49,10 +50,11 @@ public class AnnaCsv {
             }
             listArraysColumns.add(column); //записываем массив колонок в listArraysColumns
         }
+        long end = System.nanoTime();
 
             System.out.println("колонка 2"+ "  " +getColumn(listArraysColumns, 2)); //читаем нужную колонку
 
-
+        System.out.println("time = "+(end-start)/1000_000.0);
 
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

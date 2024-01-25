@@ -2,6 +2,8 @@ package collectionsClass;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.Objects;
 
 public class BinarySearch {
     public static void main(String[] args) {
@@ -33,11 +35,12 @@ public class BinarySearch {
 
         Employee emp1= new Employee(1,"Ivan",2500);
         Employee emp2 = new Employee(125,"Anton",3200);
-        Employee emp3 = new Employee(15,"Marija",3800);
+        Employee emp8 = new Employee(15,"Marika",3850);
         Employee emp4 = new Employee(48,"Igor",4300);
         Employee emp5 = new Employee(332,"Anna",4590);
         Employee emp6 = new Employee(38,"Petr",2700);
         Employee emp7 =  new Employee(57,"Tamara",4300);
+        Employee emp3 = new Employee(15,"Marija",3800);
         ArrayList<Employee> employees = new ArrayList<>();
         employees.add(emp1);
         employees.add(emp2);
@@ -46,10 +49,21 @@ public class BinarySearch {
         employees.add(emp5);
         employees.add(emp6);
         employees.add(emp7);
-        System.out.println(employees);
-        Collections.sort(employees);
-        System.out.println(employees);
+        employees.add(emp8);
+        System.out.println("before sorting = "+employees);
+        Collections.sort(employees, new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                int result = o1.getId()-o2.getId();
+                if(result == 0){
+                    o1.getName().compareTo(o2.getName());
+                }
+                return result;
+            }
+        });
+        System.out.println("after sorting = "+employees);
         int index2 = Collections.binarySearch(employees,emp7);
+
         System.out.println(index2);
 
     }
@@ -86,11 +100,13 @@ class Employee implements Comparable<Employee>{
                 '}';
     }
 
+
+
     @Override
     public int compareTo(Employee o) {
-        int result = this.salary - o.salary;
+        int result = this.id - o.id;
         if(result == 0){
-            result = this.name.compareTo(o.name);
+            this.name.compareTo(o.name);
         }
         return result;
     }

@@ -10,13 +10,24 @@ package nestedClasses.anonymusInnerClass;
 public class AnonymusClassDemo {
     public static void main(String[] args) {
 
-        Math math = new Math() {
+        Math m = new Math() {
             @Override
             public int doOperation(int a, int b) {
                 return a + b;
             }
         };
-        System.out.println("result = "+math.doOperation(5,3));
+        System.out.println("result = "+m.doOperation(5,3));
+
+      new Math() {
+         @Override
+         public int doOperation(int a, int b) {
+             return a*b;
+         }
+         public void showAll(){
+             System.out.println("doOperation = "+doOperation(3,6));
+         }
+     }.showAll();
+
     }
 }
 interface Math{
