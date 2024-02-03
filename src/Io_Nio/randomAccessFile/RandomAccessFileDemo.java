@@ -6,6 +6,7 @@ import java.io.RandomAccessFile;
 
 public class RandomAccessFileDemo {
     public static void main(String[] args) {
+
         try(RandomAccessFile file = new RandomAccessFile("test10.txt","rw")){
             int i=file.read();//прочитать один байт
             System.out.println((char)i);

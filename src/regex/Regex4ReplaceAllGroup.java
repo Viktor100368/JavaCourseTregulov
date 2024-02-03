@@ -9,8 +9,9 @@ public class Regex4ReplaceAllGroup {
         Pattern pattern= Pattern.compile("(\\d{4})(\\d{4})(\\d{4})(\\d{4})(\\d{2})(\\d{2})(\\d{3})");
         // в pattern - е группа определяется в скобках, счет начинается с еденицы
         Matcher m = pattern.matcher(s);
-//        String s1 = m.replaceAll("$5/$6 $1 $2 $3 $4 $7");
+//        String s1 = m.replaceAll("$5/$6 $1 $2 $3 $4 ($7)");
 //        System.out.println(s1);
+        System.out.println("============================");
         while(m.find()){
             System.out.println(m.group(7));//в методе grrop() мы можем получить и вывести любую группу
             //группа определяется в pattern-е в скобках

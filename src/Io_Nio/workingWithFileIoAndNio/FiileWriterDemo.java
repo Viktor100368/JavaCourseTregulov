@@ -17,7 +17,7 @@ public class FiileWriterDemo {
 //            for(int i=0;i<rubai.length(); i++){
 //                writer.write(rubai.charAt(i));
 //            }
-            writer.write(str);
+           writer.write(str);
             System.out.println("done!");
         } catch (IOException e) {
             e.printStackTrace();

@@ -12,7 +12,7 @@ public class WaitNotifyDemo {
     }
 }
 class Market{
-    private int breadCount = 0;
+    private int breadCount = 2;
     public synchronized void getBread(){
         while(breadCount < 1) {
             try {
@@ -51,11 +51,7 @@ class Producer implements Runnable{
     public void run() {
         for(int i=0; i<10; i++) {
             market.putBread();
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+
         }
     }
 }
@@ -69,11 +65,7 @@ class Consumer implements Runnable{
     public void run() {
         for (int i=0; i<10; i++) {
             market.getBread();
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+
         }
     }
 }

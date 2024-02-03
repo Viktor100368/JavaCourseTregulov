@@ -1,0 +1,45 @@
+﻿Interface
+	Type	Runnable	    →
+	BiConsumer(T, U)	    T, U →
+	BiFunction(T, U, R)	    T, U → R
+	BinaryOperator      	T, T <→ R
+	BiPredicate<T, U>   	T, U → boolean
+	BooleanSupplier     	→ boolean
+	Consumer            	T →
+	DoubleBinaryOperator    double, double → double
+	DoubleConsumer          double →
+	DoubleFunction      	double → R
+	DoublePredicate     	double → boolean
+	DoubleSupplier      	boolean →
+	DoubleToIntFunction     double → int
+	DoubleToLongFunction   	double → long
+	DoubleUnaryOperator    	double → double
+	Function<T, R>      	T → R
+	IntBinaryOperator   	int → int
+	IntConsumer         	int →
+	IntFunction         	int → R
+	IntPredicate        	int → boolean
+	IntSupplier         	→ int
+	IntToDoubleFunction    	int → double
+	IntToLongFunction       int → long
+	IntUnaryOperator    	int → int
+	LongBinaryOperator  	long, long → long
+	LongConsumer        	long →
+	LongFunction        	long → R
+	LongPredicate       	long →
+	LongSupplier        	→ long
+	LongToDoubleFunction    long → double
+	LongToIntFunction   	long → int
+	LongUnaryOperator   	long → long
+	ObjDoubleConsumer   	T, double →
+	ObjIntConsumer      	T, int →
+	ObjLongConsumer     	T, long →
+	Predicate           	T → boolean
+	Supplier            	→ T
+	ToDoubleBiFunction<T, U>    T, U → double
+	ToDoubleFunction    	T → double
+	ToIntBiFunction<T, U>   T, U → int
+	ToIntFunction       	T → int
+	ToLongBiFunction<T, U>  T, U → long
+	ToLongFunction      	T → long
+	UnaryOperator       	T → T

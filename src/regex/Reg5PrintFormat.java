@@ -24,6 +24,9 @@ public class Reg5PrintFormat {
             infoEmployee(em);
             System.out.println();
         }
+        System.out.println("==========================");
+        String newString = String.format("%03d \t %-10s \t %-10s \t %03d \t %7.2f",23,"Victor","Pupkin" ,  32,1434.3245235);
+        System.out.println(newString);
     }
 }
 class Employee123{

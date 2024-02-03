@@ -18,14 +18,14 @@ public class ScheduledExecutorServiceDemo {
         scheduledExecutorService.scheduleWithFixedDelay(new RunnableImpl200(),3,1,TimeUnit.SECONDS);//задания будут выполняться
         //с постоянной пузой в одну сек МЕЖДУ окончанием одного и началом другого задания
         try {
-            Thread.sleep(15);// задержка применяется  для scheduledAtFixedRate и scheduleWithFixedDelay
+            Thread.sleep(15000);// задержка применяется  для scheduledAtFixedRate и scheduleWithFixedDelay
             //т.к. для работы заданий не нужно загонять цикл
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         scheduledExecutorService.shutdown();
         //есть еще один из методов создания потоков
-        ExecutorService executorService = Executors.newCachedThreadPool();//его особенность в том,
+        //ExecutorService executorService = Executors.newCachedThreadPool();//его особенность в том,
         //что он создает потоки по мере надобности т.е., есть cache если приходит задание, он создает thread
         // приходит второе , он создает еще thread ,приходит еще, если один из thread освободился, то он берет
         //задание на себя и т.д., Если в течении 60сек у освободившегося thread нет заданий он закрывается
