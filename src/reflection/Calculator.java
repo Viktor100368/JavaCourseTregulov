@@ -49,29 +49,6 @@ class CalculatorTest{
 
 
 
-
-
-
-
-//            String methodName = reader.readLine();
-//            String firstArgument = reader.readLine();
-//            String secondArgument = reader.readLine();
-//
-//            Calculator calc = new Calculator();
-//            Class calculator = calc.getClass();
-//            //Class calculator = Class.forName("reflection.Calculator");
-//            Method methodForCompute = null;
-//            Method[] methods = calculator.getDeclaredMethods();//вытаскиваем все методы, что есть в классе
-//            for(Method m:methods){
-//                if(m.getName().equals(methodName)){
-//                    methodForCompute = m;
-//                }
-//            }
-//            methodForCompute.invoke(calc,Integer.parseInt(firstArgument),
-//                    Integer.parseInt(secondArgument));
-
-
-
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

@@ -8,7 +8,7 @@ public class ReflectionDemo3 {
         Class empClass = Class.forName("reflection.Employee");
         Field field = empClass.getDeclaredField("salary");
         field.setAccessible(true);
-        double fieldSalary = (double) field.getDouble(employee);
+        double fieldSalary = field.getDouble(employee);
         System.out.println("employee salary  = "+fieldSalary);
 
         field.set(employee,1500);
